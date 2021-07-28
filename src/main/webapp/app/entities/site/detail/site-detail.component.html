@@ -1,0 +1,42 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="site">
+      <h2 data-cy="siteDetailsHeading"><span jhiTranslate="harkSvrApp.site.detail.title">Site</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ site.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="harkSvrApp.site.status">Status</span></dt>
+        <dd>
+          <span jhiTranslate="{{ 'harkSvrApp.SiteStatus.' + site.status }}">{{ site.status }}</span>
+        </dd>
+        <dt><span jhiTranslate="harkSvrApp.site.lastCheck">Last Check</span></dt>
+        <dd>
+          <span>{{ site.lastCheck | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="harkSvrApp.site.user">User</span></dt>
+        <dd>
+          <div *ngIf="site.user">
+            <a [routerLink]="['/application-user', site.user?.id, 'view']">{{ site.user?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/site', site.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

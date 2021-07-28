@@ -1,0 +1,26 @@
+{
+  "harkSvrApp": {
+    "site": {
+      "home": {
+        "title": "Sites",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Site",
+        "createOrEditLabel": "Create or edit a Site",
+        "notFound": "No Sites found"
+      },
+      "created": "A new Site is created with identifier {{ param }}",
+      "updated": "A Site is updated with identifier {{ param }}",
+      "deleted": "A Site is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Site {{ id }}?"
+      },
+      "detail": {
+        "title": "Site"
+      },
+      "id": "ID",
+      "status": "Status",
+      "lastCheck": "Last Check",
+      "user": "User"
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "name": "ApplicationUser",
+  "fields": [
+    {
+      "fieldName": "lastAccess",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "ipAddress",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "15"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "site",
+      "otherEntityRelationshipName": "user",
+      "relationshipName": "site"
+    }
+  ],
+  "entityTableName": "application_user",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210728155140"
+}

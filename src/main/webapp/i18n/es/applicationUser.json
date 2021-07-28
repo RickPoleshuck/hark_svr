@@ -1,0 +1,26 @@
+{
+  "harkSvrApp": {
+    "applicationUser": {
+      "home": {
+        "title": "Application Users",
+        "refreshListLabel": "Refrescar lista",
+        "createLabel": "Crear nuevo Application User",
+        "createOrEditLabel": "Crear o editar Application User",
+        "notFound": "Ningún Application Users encontrado"
+      },
+      "created": "Un nuevo Application User ha sido creado con el identificador {{ param }}",
+      "updated": "Un Application User ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Application User ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Application User {{ id }}?"
+      },
+      "detail": {
+        "title": "Application User"
+      },
+      "id": "ID",
+      "lastAccess": "Last Access",
+      "ipAddress": "Ip Address",
+      "site": "Site"
+    }
+  }
+}

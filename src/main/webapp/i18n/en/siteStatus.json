@@ -1,0 +1,11 @@
+{
+  "harkSvrApp": {
+    "SiteStatus": {
+      "null": "",
+      "UP": "UP",
+      "DOWN": "DOWN",
+      "ERROR": "ERROR",
+      "UNKNOWN": "UNKNOWN"
+    }
+  }
+}

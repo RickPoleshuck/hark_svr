@@ -1,0 +1,21 @@
+enum SiteStatus {
+  UP, DOWN, ERROR, UNKNOWN
+}
+
+entity ApplicationUser {
+  lastAccess Instant
+  ipAddress String maxlength(15)
+}
+
+entity Site {
+  status SiteStatus
+  lastCheck Instant
+}
+
+
+relationship OneToMany {
+  ApplicationUser{site} to Site{user}
+}
+
+paginate ApplicationUser with pagination
+paginate Site with pagination
