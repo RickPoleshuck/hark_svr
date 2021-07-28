@@ -10,6 +10,7 @@ entity ApplicationUser {
 entity Site {
   status SiteStatus
   lastCheck Instant
+  url String
 }
 
 

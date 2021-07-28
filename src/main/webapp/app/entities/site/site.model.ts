@@ -6,6 +6,7 @@ export interface ISite {
   id?: number;
   status?: SiteStatus | null;
   lastCheck?: dayjs.Dayjs | null;
+  url?: string | null;
   user?: IApplicationUser | null;
 }
 
@@ -14,6 +15,7 @@ export class Site implements ISite {
     public id?: number,
     public status?: SiteStatus | null,
     public lastCheck?: dayjs.Dayjs | null,
+    public url?: string | null,
     public user?: IApplicationUser | null
   ) {}
 }

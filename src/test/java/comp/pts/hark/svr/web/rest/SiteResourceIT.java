@@ -38,6 +38,9 @@ class SiteResourceIT {
     private static final Instant DEFAULT_LAST_CHECK = Instant.ofEpochMilli(0L);
     private static final Instant UPDATED_LAST_CHECK = Instant.now().truncatedTo(ChronoUnit.MILLIS);
 
+    private static final String DEFAULT_URL = "AAAAAAAAAA";
+    private static final String UPDATED_URL = "BBBBBBBBBB";
+
     private static final String ENTITY_API_URL = "/api/sites";
     private static final String ENTITY_API_URL_ID = ENTITY_API_URL + "/{id}";
 
@@ -62,7 +65,7 @@ class SiteResourceIT {
      * if they test an entity which requires the current entity.
      */
     public static Site createEntity(EntityManager em) {
-        Site site = new Site().status(DEFAULT_STATUS).lastCheck(DEFAULT_LAST_CHECK);
+        Site site = new Site().status(DEFAULT_STATUS).lastCheck(DEFAULT_LAST_CHECK).url(DEFAULT_URL);
         return site;
     }
 
@@ -73,7 +76,7 @@ class SiteResourceIT {
      * if they test an entity which requires the current entity.
      */
     public static Site createUpdatedEntity(EntityManager em) {
-        Site site = new Site().status(UPDATED_STATUS).lastCheck(UPDATED_LAST_CHECK);
+        Site site = new Site().status(UPDATED_STATUS).lastCheck(UPDATED_LAST_CHECK).url(UPDATED_URL);
         return site;
     }
 
@@ -97,6 +100,7 @@ class SiteResourceIT {
         Site testSite = siteList.get(siteList.size() - 1);
         assertThat(testSite.getStatus()).isEqualTo(DEFAULT_STATUS);
         assertThat(testSite.getLastCheck()).isEqualTo(DEFAULT_LAST_CHECK);
+        assertThat(testSite.getUrl()).isEqualTo(DEFAULT_URL);
     }
 
     @Test
@@ -130,7 +134,8 @@ class SiteResourceIT {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(site.getId().intValue())))
             .andExpect(jsonPath("$.[*].status").value(hasItem(DEFAULT_STATUS.toString())))
-            .andExpect(jsonPath("$.[*].lastCheck").value(hasItem(DEFAULT_LAST_CHECK.toString())));
+            .andExpect(jsonPath("$.[*].lastCheck").value(hasItem(DEFAULT_LAST_CHECK.toString())))
+            .andExpect(jsonPath("$.[*].url").value(hasItem(DEFAULT_URL)));
     }
 
     @Test
@@ -146,7 +151,8 @@ class SiteResourceIT {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.id").value(site.getId().intValue()))
             .andExpect(jsonPath("$.status").value(DEFAULT_STATUS.toString()))
-            .andExpect(jsonPath("$.lastCheck").value(DEFAULT_LAST_CHECK.toString()));
+            .andExpect(jsonPath("$.lastCheck").value(DEFAULT_LAST_CHECK.toString()))
+            .andExpect(jsonPath("$.url").value(DEFAULT_URL));
     }
 
     @Test
@@ -168,7 +174,7 @@ class SiteResourceIT {
         Site updatedSite = siteRepository.findById(site.getId()).get();
         // Disconnect from session so that the updates on updatedSite are not directly saved in db
         em.detach(updatedSite);
-        updatedSite.status(UPDATED_STATUS).lastCheck(UPDATED_LAST_CHECK);
+        updatedSite.status(UPDATED_STATUS).lastCheck(UPDATED_LAST_CHECK).url(UPDATED_URL);
 
         restSiteMockMvc
             .perform(
@@ -184,6 +190,7 @@ class SiteResourceIT {
         Site testSite = siteList.get(siteList.size() - 1);
         assertThat(testSite.getStatus()).isEqualTo(UPDATED_STATUS);
         assertThat(testSite.getLastCheck()).isEqualTo(UPDATED_LAST_CHECK);
+        assertThat(testSite.getUrl()).isEqualTo(UPDATED_URL);
     }
 
     @Test
@@ -254,7 +261,7 @@ class SiteResourceIT {
         Site partialUpdatedSite = new Site();
         partialUpdatedSite.setId(site.getId());
 
-        partialUpdatedSite.lastCheck(UPDATED_LAST_CHECK);
+        partialUpdatedSite.lastCheck(UPDATED_LAST_CHECK).url(UPDATED_URL);
 
         restSiteMockMvc
             .perform(
@@ -270,6 +277,7 @@ class SiteResourceIT {
         Site testSite = siteList.get(siteList.size() - 1);
         assertThat(testSite.getStatus()).isEqualTo(DEFAULT_STATUS);
         assertThat(testSite.getLastCheck()).isEqualTo(UPDATED_LAST_CHECK);
+        assertThat(testSite.getUrl()).isEqualTo(UPDATED_URL);
     }
 
     @Test
@@ -284,7 +292,7 @@ class SiteResourceIT {
         Site partialUpdatedSite = new Site();
         partialUpdatedSite.setId(site.getId());
 
-        partialUpdatedSite.status(UPDATED_STATUS).lastCheck(UPDATED_LAST_CHECK);
+        partialUpdatedSite.status(UPDATED_STATUS).lastCheck(UPDATED_LAST_CHECK).url(UPDATED_URL);
 
         restSiteMockMvc
             .perform(
@@ -300,6 +308,7 @@ class SiteResourceIT {
         Site testSite = siteList.get(siteList.size() - 1);
         assertThat(testSite.getStatus()).isEqualTo(UPDATED_STATUS);
         assertThat(testSite.getLastCheck()).isEqualTo(UPDATED_LAST_CHECK);
+        assertThat(testSite.getUrl()).isEqualTo(UPDATED_URL);
     }
 
     @Test

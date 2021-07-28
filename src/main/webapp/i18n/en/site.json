@@ -20,6 +20,7 @@
       "id": "ID",
       "status": "Status",
       "lastCheck": "Last Check",
+      "url": "Url",
       "user": "User"
     }
   }

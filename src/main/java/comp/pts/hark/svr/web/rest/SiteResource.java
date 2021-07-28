@@ -132,6 +132,9 @@ public class SiteResource {
                     if (site.getLastCheck() != null) {
                         existingSite.setLastCheck(site.getLastCheck());
                     }
+                    if (site.getUrl() != null) {
+                        existingSite.setUrl(site.getUrl());
+                    }
 
                     return existingSite;
                 }

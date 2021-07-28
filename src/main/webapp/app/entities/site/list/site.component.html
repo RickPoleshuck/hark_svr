@@ -37,6 +37,7 @@
           <th scope="col" jhiSortBy="lastCheck">
             <span jhiTranslate="harkSvrApp.site.lastCheck">Last Check</span> <fa-icon icon="sort"></fa-icon>
           </th>
+          <th scope="col" jhiSortBy="url"><span jhiTranslate="harkSvrApp.site.url">Url</span> <fa-icon icon="sort"></fa-icon></th>
           <th scope="col" jhiSortBy="user.id"><span jhiTranslate="harkSvrApp.site.user">User</span> <fa-icon icon="sort"></fa-icon></th>
           <th scope="col"></th>
         </tr>
@@ -48,6 +49,7 @@
           </td>
           <td jhiTranslate="{{ 'harkSvrApp.SiteStatus.' + site.status }}">{{ site.status }}</td>
           <td>{{ site.lastCheck | formatMediumDatetime }}</td>
+          <td>{{ site.url }}</td>
           <td>
             <div *ngIf="site.user">
               <a [routerLink]="['/application-user', site.user?.id, 'view']">{{ site.user?.id }}</a>

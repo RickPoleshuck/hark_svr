@@ -26,6 +26,7 @@ export class SiteUpdateComponent implements OnInit {
     id: [],
     status: [],
     lastCheck: [],
+    url: [],
     user: [],
   });
 
@@ -91,6 +92,7 @@ export class SiteUpdateComponent implements OnInit {
       id: site.id,
       status: site.status,
       lastCheck: site.lastCheck ? site.lastCheck.format(DATE_TIME_FORMAT) : null,
+      url: site.url,
       user: site.user,
     });
 
@@ -118,6 +120,7 @@ export class SiteUpdateComponent implements OnInit {
       id: this.editForm.get(['id'])!.value,
       status: this.editForm.get(['status'])!.value,
       lastCheck: this.editForm.get(['lastCheck'])!.value ? dayjs(this.editForm.get(['lastCheck'])!.value, DATE_TIME_FORMAT) : undefined,
+      url: this.editForm.get(['url'])!.value,
       user: this.editForm.get(['user'])!.value,
     };
   }

@@ -29,6 +29,7 @@ describe('Service Tests', () => {
         id: 0,
         status: SiteStatus.UP,
         lastCheck: currentDate,
+        url: 'AAAAAAA',
       };
     });
 
@@ -77,6 +78,7 @@ describe('Service Tests', () => {
             id: 1,
             status: 'BBBBBB',
             lastCheck: currentDate.format(DATE_TIME_FORMAT),
+            url: 'BBBBBB',
           },
           elemDefault
         );
@@ -126,6 +128,7 @@ describe('Service Tests', () => {
             id: 1,
             status: 'BBBBBB',
             lastCheck: currentDate.format(DATE_TIME_FORMAT),
+            url: 'BBBBBB',
           },
           elemDefault
         );
@@ -182,7 +185,7 @@ describe('Service Tests', () => {
         });
 
         it('should add only unique Site to an array', () => {
-          const siteArray: ISite[] = [{ id: 123 }, { id: 456 }, { id: 2298 }];
+          const siteArray: ISite[] = [{ id: 123 }, { id: 456 }, { id: 41085 }];
           const siteCollection: ISite[] = [{ id: 123 }];
           expectedResult = service.addSiteToCollectionIfMissing(siteCollection, ...siteArray);
           expect(expectedResult).toHaveLength(3);

@@ -9,6 +9,10 @@
     {
       "fieldName": "lastCheck",
       "fieldType": "Instant"
+    },
+    {
+      "fieldName": "url",
+      "fieldType": "String"
     }
   ],
   "relationships": [

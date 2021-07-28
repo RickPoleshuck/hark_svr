@@ -29,6 +29,9 @@ public class Site implements Serializable {
     @Column(name = "last_check")
     private Instant lastCheck;
 
+    @Column(name = "url")
+    private String url;
+
     @ManyToOne
     @JsonIgnoreProperties(value = { "sites" }, allowSetters = true)
     private ApplicationUser user;
@@ -73,6 +76,19 @@ public class Site implements Serializable {
         this.lastCheck = lastCheck;
     }
 
+    public String getUrl() {
+        return this.url;
+    }
+
+    public Site url(String url) {
+        this.url = url;
+        return this;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
     public ApplicationUser getUser() {
         return this.user;
     }
@@ -112,6 +128,7 @@ public class Site implements Serializable {
             "id=" + getId() +
             ", status='" + getStatus() + "'" +
             ", lastCheck='" + getLastCheck() + "'" +
+            ", url='" + getUrl() + "'" +
             "}";
     }
 }
