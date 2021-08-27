@@ -9,7 +9,7 @@
     <artifactId>hark-svr</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
-    <name>Hark Svr</name>
+    <name>Hark</name>
 
     <repositories>
         <!-- jhipster-needle-maven-repository -->
@@ -982,6 +982,7 @@
                 </dependency>
             </dependencies>
             <build>
+                <finalName>hark</finalName>
                 <plugins>
                     <plugin>
                         <artifactId>maven-clean-plugin</artifactId>
