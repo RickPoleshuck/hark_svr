@@ -123,6 +123,14 @@
           <!-- jhipster-needle-add-element-to-admin-menu - JHipster will add entities to the admin menu here -->
         </ul>
       </li>
+      <li ngbDropdown class="nav-item dropdown pointer" display="dynamic">
+        <a class="nav-link dropdown-toggle" ngbDropdownToggle href="javascript:void(0);" routerLink="easy_vac" id="easyVacBarDropdown">
+          <span>
+            <fa-icon icon="flag"></fa-icon>
+            <span>Easy Vaccine Card</span>
+          </span>
+        </a>
+      </li>
       <li ngbDropdown class="nav-item dropdown pointer" display="dynamic" *ngIf="languages && languages.length > 1">
         <a class="nav-link dropdown-toggle" ngbDropdownToggle href="javascript:void(0);" id="languagesnavBarDropdown">
           <span>
