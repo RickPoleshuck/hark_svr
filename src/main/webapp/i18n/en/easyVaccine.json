@@ -1,0 +1,15 @@
+{
+  "harkSvrApp": {
+    "easyVaccine": {
+      "home": {
+        "title": "Easy Vaccines",
+        "refreshListLabel": "Refresh list",
+        "notFound": "No Easy Vaccines found"
+      },
+      "detail": {
+        "title": "Easy Vaccine"
+      },
+      "id": "ID"
+    }
+  }
+}
