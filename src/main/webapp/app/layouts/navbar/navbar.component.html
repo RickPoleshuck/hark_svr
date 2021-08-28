@@ -66,6 +66,18 @@
               <span jhiTranslate="global.menu.entities.site">Site</span>
             </a>
           </li>
+          <li>
+            <a
+              class="dropdown-item"
+              routerLink="easy-vaccine"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+              (click)="collapseNavbar()"
+            >
+              <fa-icon icon="asterisk" [fixedWidth]="true"></fa-icon>
+              <span jhiTranslate="global.menu.entities.easyVaccine">Easy Vaccine</span>
+            </a>
+          </li>
           <!-- jhipster-needle-add-entity-to-menu - JHipster will add entities to the menu here -->
         </ul>
       </li>
@@ -124,11 +136,15 @@
         </ul>
       </li>
       <li ngbDropdown class="nav-item dropdown pointer" display="dynamic">
-        <a class="nav-link dropdown-toggle" ngbDropdownToggle href="javascript:void(0);" routerLink="easy_vac" id="easyVacBarDropdown">
-          <span>
-            <fa-icon icon="flag"></fa-icon>
-            <span>Easy Vaccine Card</span>
-          </span>
+        <a
+          class="dropdown-item"
+          routerLink="easy-vaccine"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          (click)="collapseNavbar()"
+        >
+          <fa-icon icon="asterisk" [fixedWidth]="true"></fa-icon>
+          <span jhiTranslate="global.menu.entities.easyVaccine">Easy Vaccine</span>
         </a>
       </li>
       <li ngbDropdown class="nav-item dropdown pointer" display="dynamic" *ngIf="languages && languages.length > 1">

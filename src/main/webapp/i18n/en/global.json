@@ -9,6 +9,7 @@
         "main": "Entities",
         "applicationUser": "Application User",
         "site": "Site",
+        "easyVaccine": "Easy Vaccine",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

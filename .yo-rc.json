@@ -43,7 +43,7 @@
     "clientPackageManager": "npm",
     "clientThemeVariant": "",
     "languages": ["en", "es"],
-    "entities": ["ApplicationUser", "Site"],
-    "lastLiquibaseTimestamp": 1627487501000
+    "entities": ["ApplicationUser", "Site", "EasyVaccine"],
+    "lastLiquibaseTimestamp": 1630179393000
   }
 }
